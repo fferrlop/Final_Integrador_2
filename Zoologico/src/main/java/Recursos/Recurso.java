@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 // Clase para representar un recurso genérico
-class Recurso {
+public class Recurso {
     private String nombre;
     private int cantidad;
 

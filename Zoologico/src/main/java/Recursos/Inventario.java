@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class Inventario {
+public class Inventario {
     private Map<String, Recurso> inventario;
 
     public Inventario() {

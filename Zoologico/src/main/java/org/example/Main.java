@@ -1,8 +1,11 @@
 package org.example;
 
+
+
 import Habitats.*;
 import Animales.*;
 import Visitantes.*;
+import Recursos.*;
 
 import java.util.Scanner;
 
@@ -48,7 +51,8 @@ public class Main {
             System.out.println("\nMenú Trabajador del Zoológico");
             System.out.println("1. Gestión de Hábitats");
             System.out.println("2. Cuidado de Animales");
-            System.out.println("3. Salir");
+            System.out.println("3. Administración de Recursos");
+            System.out.println("4. Salir");
             System.out.print("Seleccione una opción: ");
 
             opcionTrabajador = scanner.nextInt();
@@ -63,18 +67,23 @@ public class Main {
                     System.exit(0);
                     break;
                 case 3:
-                    System.out.println("Saliendo del menú de trabajador del zoológico.");
+                    administracionDeRecursos();
+                    System.exit(0);
+                    break;
+                case 4:
+                    System.out.println("Saliendo del menú de trabajador.");
                     break;
                 default:
                     System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
                     break;
             }
 
-        } while (opcionTrabajador != 3);
+        } while (opcionTrabajador != 4);
     }
 
     private static void menuVisitanteDelZoo() {
         boolean salir = false;
+        int opcionVisitante;  // Declarar fuera del bloque del switch
 
         do {
             System.out.println("\nMenú Visitante del Zoológico");
@@ -84,37 +93,37 @@ public class Main {
             System.out.println("4. Salir");
             System.out.print("Seleccione un tipo de tour (1, 2, 3 o 4): ");
 
-            int opcionVisitante = scanner.nextInt();
+            opcionVisitante = scanner.nextInt();  // Asignar valor a opcionVisitante
 
             switch (opcionVisitante) {
                 case 1:
                     // Lógica para el Tour de Aves
                     TourAves tourAves = new TourAves();
                     tourAves.realizarTour();
-                    salir = true;
+                    System.exit(0);
                     break;
                 case 2:
                     // Lógica para el Tour de Mamíferos
                     TourMamiferos tourMamiferos = new TourMamiferos();
                     tourMamiferos.realizarTour();
-                    salir = true;
+                    System.exit(0);
                     break;
                 case 3:
                     // Lógica para el Tour de Peces
                     TourPeces tourPeces = new TourPeces();
                     tourPeces.realizarTour();
-                    salir = true;
+                    System.exit(0);
                     break;
                 case 4:
                     System.out.println("Saliendo del menú de visitante.");
-                    salir = true;
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
                     break;
             }
 
-        } while (!salir);
+        } while (opcionVisitante != 4);
     }
 
 
@@ -151,4 +160,25 @@ public class Main {
         Colibri.comportamiento();
 
     }
-}
+
+    // Administración de recursos
+
+    public static void administracionDeRecursos() {
+
+                // Crear inventario
+                Inventario inventario = new Inventario();
+
+                // Agregar recursos al inventario
+                Alimentos manzanas = new Alimentos("Pienso", 100, "Comida");
+                Medicinas analgesico = new Medicinas("Analgesico", 50, "Analgésicos");
+                Equipamientos jaulas = new Equipamientos("Jaulas", 10, "Hábitats");
+
+                inventario.agregarRecurso(manzanas);
+                inventario.agregarRecurso(analgesico);
+                inventario.agregarRecurso(jaulas);
+
+                // Mostrar inventario
+                inventario.mostrarInventario();
+            }
+        }
+

@@ -1,6 +1,6 @@
 package Recursos;
 
-class Alimentos extends Recurso {
+public class Alimentos extends Recurso {
     private String tipo;
 
     public Alimentos(String nombre, int cantidad, String tipo) {

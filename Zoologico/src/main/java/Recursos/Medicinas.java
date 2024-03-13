@@ -1,6 +1,6 @@
 package Recursos;
 
-class Medicinas extends Recurso {
+public class Medicinas extends Recurso {
     private String tipo;
 
     public Medicinas(String nombre, int cantidad, String tipo) {
