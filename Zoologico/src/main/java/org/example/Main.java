@@ -1,11 +1,12 @@
 package org.example;
 
 import Habitats.*;
+import Animales.*;
 
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner scanner; // Declarar scanner como variable de clase
+    private static Scanner scanner;
 
     public static void main(String[] args) {
         scanner = new Scanner(System.in);
@@ -42,8 +43,8 @@ public class Main {
         int opcionTrabajador;
         do {
             System.out.println("\nMenú Trabajador del Zoológico");
-            System.out.println("1. Acceder a otra opción");
-            System.out.println("2. Gestión de Hábitats");
+            System.out.println("1. Gestión de Hábitats");
+            System.out.println("2. Cuidado de Animales");
             System.out.println("3. Salir");
             System.out.print("Seleccione una opción: ");
 
@@ -51,11 +52,12 @@ public class Main {
 
             switch (opcionTrabajador) {
                 case 1:
-                    // Agregar lógica para otras opciones
+                    gestionDeHabitats();
+                    System.exit(0);
                     break;
                 case 2:
-                    gestionDeHabitats(); // Llamada a la gestión de hábitats
-                    System.exit(0); // Terminar la ejecución después de la gestión de hábitats
+                    gestionDeHabitats();
+                    System.exit(0);
                     break;
                 case 3:
                     System.out.println("Saliendo del menú de trabajador del zoológico.");
@@ -78,5 +80,11 @@ public class Main {
         acuario1.monitorear();
         terrestre1.monitorear();
         aviario1.monitorear();
+    }
+
+    // Cuidado de animales
+
+    public static void cuidadoDeAnimales() {
+
     }
 }
