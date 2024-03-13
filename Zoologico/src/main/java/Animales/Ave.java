@@ -10,7 +10,14 @@ public class Ave extends Animal {
 
     @Override
     public void comportamiento() {
-        System.out.println(getNombre() + " mostrando comportamientos esperados.");
+        System.out.println("Información del (" + getNombre() + "): " +
+                "Especie: " + getEspecie() +
+                ", Edad: " + getEdad() +
+                ", Genero: " + getGenero());
     }
 
+    // Obtener información específica del ave
+    public String obtenerInformacionAve() {
+        return obtenerInformacion() + ", Tipo de Pico: " + tipoPico;
+    }
 }

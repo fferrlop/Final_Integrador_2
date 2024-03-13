@@ -10,6 +10,15 @@ public class Mamifero extends Animal {
 
     @Override
     public void comportamiento() {
-        System.out.println(getNombre() + " mostrando comportamientos esperados.");
+        System.out.println("Información del (" + getNombre() + "): " +
+                               "Especie: " + getEspecie() +
+                                 ", Edad: " + getEdad() +
+                              ", Genero: " + getGenero());
+
+    //System.out.println("Información del (" + getNombre() + "): " +
+        //                "Especie: " + getEspecie() +
+        //                ", Edad: " + getEdad +
+        //                ", Genero: " + getGenero());
+        //    }
     }
 }

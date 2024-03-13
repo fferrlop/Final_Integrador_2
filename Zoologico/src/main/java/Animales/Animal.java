@@ -1,10 +1,11 @@
 package Animales;
 
+
 public class Animal {
-    private String nombre;
-    private String especie;
-    private int edad;
-    private String genero;
+    protected String nombre;
+    protected String especie;
+    protected int edad;
+    protected String genero;
 
     public Animal(String nombre, String especie, int edad, String genero) {
         this.nombre = nombre;
@@ -14,7 +15,7 @@ public class Animal {
     }
 
     public void alimentar() {
-        System.out.println(nombre + " está siendo alimentado.");
+        System.out.println(nombre + " tiene comida.");
     }
 
     public void monitorearSalud() {
@@ -25,22 +26,28 @@ public class Animal {
         System.out.println(nombre + " está mostrando comportamiento normal.");
     }
 
-    // Puedes agregar más métodos o atributos según tus necesidades
+    // Obtener información del animal
+    public String obtenerInformacion() {
+        return "Nombre: " + nombre +
+                ", Especie: " + especie +
+                ", Edad: " + edad +
+                ", Género: " + genero;
+    }
 
-    // Getters y setters
+    // Getter para el nombre
     public String getNombre() {
         return nombre;
     }
-
     public String getEspecie() {
         return especie;
     }
-
     public int getEdad() {
         return edad;
     }
-
     public String getGenero() {
         return genero;
     }
+
+
+
 }

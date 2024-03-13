@@ -10,7 +10,14 @@ public class Pez extends Animal {
 
     @Override
     public void comportamiento() {
-        System.out.println(getNombre() + " mostrando comportamientos esperados.");
+        System.out.println("Información del (" + getNombre() + "): " +
+                "Especie: " + getEspecie() +
+                ", Edad: " + getEdad() +
+                ", Genero: " + getGenero());
     }
 
+    // Obtener información específica del pez
+    public String obtenerInformacionPez() {
+        return obtenerInformacion() + ", Tipo de Agua: " + tipoAgua;
+    }
 }

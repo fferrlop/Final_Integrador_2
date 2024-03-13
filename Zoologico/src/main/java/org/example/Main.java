@@ -2,6 +2,7 @@ package org.example;
 
 import Habitats.*;
 import Animales.*;
+import Visitantes.*;
 
 import java.util.Scanner;
 
@@ -24,6 +25,8 @@ public class Main {
             case 1:
                 // Interfaz para visitantes
                 System.out.println("Interfaz para visitantes");
+                menuVisitanteDelZoo();
+
                 // Lógica para visitantes
                 break;
             case 2:
@@ -56,7 +59,7 @@ public class Main {
                     System.exit(0);
                     break;
                 case 2:
-                    gestionDeHabitats();
+                    cuidadoDeAnimales();
                     System.exit(0);
                     break;
                 case 3:
@@ -69,6 +72,51 @@ public class Main {
 
         } while (opcionTrabajador != 3);
     }
+
+    private static void menuVisitanteDelZoo() {
+        boolean salir = false;
+
+        do {
+            System.out.println("\nMenú Visitante del Zoológico");
+            System.out.println("1. Tour de Aves");
+            System.out.println("2. Tour de Mamíferos");
+            System.out.println("3. Tour de Peces");
+            System.out.println("4. Salir");
+            System.out.print("Seleccione un tipo de tour (1, 2, 3 o 4): ");
+
+            int opcionVisitante = scanner.nextInt();
+
+            switch (opcionVisitante) {
+                case 1:
+                    // Lógica para el Tour de Aves
+                    TourAves tourAves = new TourAves();
+                    tourAves.realizarTour();
+                    salir = true;
+                    break;
+                case 2:
+                    // Lógica para el Tour de Mamíferos
+                    TourMamiferos tourMamiferos = new TourMamiferos();
+                    tourMamiferos.realizarTour();
+                    salir = true;
+                    break;
+                case 3:
+                    // Lógica para el Tour de Peces
+                    TourPeces tourPeces = new TourPeces();
+                    tourPeces.realizarTour();
+                    salir = true;
+                    break;
+                case 4:
+                    System.out.println("Saliendo del menú de visitante.");
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
+                    break;
+            }
+
+        } while (!salir);
+    }
+
 
     // Gestión de hábitats
     public static void gestionDeHabitats() {
@@ -85,6 +133,22 @@ public class Main {
     // Cuidado de animales
 
     public static void cuidadoDeAnimales() {
+        Mamifero capibara = new Mamifero("Capibara", "Roedor", 5, "Macho", "Corto");
+        Pez salmon = new Pez("Salmón", "Salmoniforme", 2, "Hembra", "Agua dulce");
+        Ave Colibri = new Ave("Colibrí", "Trochilidae", 1, "Hembra", "Pico forma de lezna");
+
+        // Registrar actividades
+        capibara.alimentar();
+        capibara.monitorearSalud();
+        capibara.comportamiento();
+
+        salmon.alimentar();
+        salmon.monitorearSalud();
+        salmon.comportamiento();
+
+        Colibri.alimentar();
+        Colibri.monitorearSalud();
+        Colibri.comportamiento();
 
     }
 }
