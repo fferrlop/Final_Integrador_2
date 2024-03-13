@@ -1,7 +1,8 @@
 package org.example;
 
-import java.util.Scanner;
+import Habitats.*;
 
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,9 +33,23 @@ public class Main {
                 System.out.println("Opción no válida. Por favor, seleccione 1 o 2.");
                 break;
         }
-
-        // Cierre del scanner
         scanner.close();
+
+        public static void trabajadorDelZoo() {
+            scanner = new Scanner(System.in);
+        }
+
+
+//Gestión de habitats
+
+        Acuario acuario1 = new Acuario("Acuario");
+        Terrario terrestre1 = new Terrario("Terrario");
+        Aviario aviario1 = new Aviario("Aviario");
+
+        // Monitorear hábitats
+        acuario1.monitorear();
+        terrestre1.monitorear();
+        aviario1.monitorear();
     }
 }
 
