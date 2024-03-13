@@ -1,26 +1,34 @@
 package Habitats;
 
 public class Habitat {
-
     private String nombre;
-    private double temperatura;
-    private double humedad;
-    private boolean limpio;
+    private int temperatura;
+    private int limpieza;
 
-    // Constructor
-    public Habitat(String nombre) {
+    public Habitat(String nombre, int temperatura, int limpieza) {
         this.nombre = nombre;
-        this.temperatura = 0.0;
-        this.humedad = 0.0;
-        this.limpio = true;
+        this.temperatura = temperatura;
+        this.limpieza = limpieza;
     }
-
-    // Métodos getters y setters (puedes agregar más según sea necesario)
 
     public void monitorear() {
-        // Implementar lógica de monitoreo
-        System.out.println("Monitoreando el hábitat " + nombre + "...");
-        // Puedes agregar lógica para analizar la temperatura, humedad, limpieza, etc.
+        System.out.println("Información del hábitat (" + nombre + "): " +
+                "Temperatura: " + temperatura +
+                ", Limpieza: " + limpieza);
+    }
+
+    // Puedes agregar más métodos o atributos según tus necesidades
+
+    // Getters y setters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getTemperatura() {
+        return temperatura;
+    }
+
+    public int getLimpieza() {
+        return limpieza;
     }
 }
-

@@ -5,9 +5,10 @@ import Habitats.*;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    private static Scanner scanner; // Declarar scanner como variable de clase
 
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        scanner = new Scanner(System.in);
 
         System.out.println("Bienvenido al Zoologico");
 
@@ -27,24 +28,51 @@ public class Main {
             case 2:
                 // Interfaz para trabajadores
                 System.out.println("Interfaz para trabajadores");
-                // Lógica para trabajadores
+                menuTrabajadorDelZoo(); // Llamada al menú de trabajador del zoológico
                 break;
             default:
                 System.out.println("Opción no válida. Por favor, seleccione 1 o 2.");
                 break;
         }
+
         scanner.close();
+    }
 
-        public static void trabajadorDelZoo() {
-            scanner = new Scanner(System.in);
-        }
+    public static void menuTrabajadorDelZoo() {
+        int opcionTrabajador;
+        do {
+            System.out.println("\nMenú Trabajador del Zoológico");
+            System.out.println("1. Acceder a otra opción");
+            System.out.println("2. Gestión de Hábitats");
+            System.out.println("3. Salir");
+            System.out.print("Seleccione una opción: ");
 
+            opcionTrabajador = scanner.nextInt();
 
-//Gestión de habitats
+            switch (opcionTrabajador) {
+                case 1:
+                    // Agregar lógica para otras opciones
+                    break;
+                case 2:
+                    gestionDeHabitats(); // Llamada a la gestión de hábitats
+                    System.exit(0); // Terminar la ejecución después de la gestión de hábitats
+                    break;
+                case 3:
+                    System.out.println("Saliendo del menú de trabajador del zoológico.");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
+                    break;
+            }
 
-        Acuario acuario1 = new Acuario("Acuario");
-        Terrario terrestre1 = new Terrario("Terrario");
-        Aviario aviario1 = new Aviario("Aviario");
+        } while (opcionTrabajador != 3);
+    }
+
+    // Gestión de hábitats
+    public static void gestionDeHabitats() {
+        Acuario acuario1 = new Acuario( "Acuario",35, 80, 80);
+        Terrario terrestre1 = new Terrario("Terrario",25, 70, 40);
+        Aviario aviario1 = new Aviario( "Aviario",30, 80, 75);
 
         // Monitorear hábitats
         acuario1.monitorear();
@@ -52,4 +80,3 @@ public class Main {
         aviario1.monitorear();
     }
 }
-
