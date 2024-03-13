@@ -6,6 +6,7 @@ import Habitats.*;
 import Animales.*;
 import Visitantes.*;
 import Recursos.*;
+import MantenimientoRecursos.*;
 
 import java.util.Scanner;
 
@@ -52,7 +53,8 @@ public class Main {
             System.out.println("1. Gestión de Hábitats");
             System.out.println("2. Cuidado de Animales");
             System.out.println("3. Administración de Recursos");
-            System.out.println("4. Salir");
+            System.out.println("4. Mantenimiento y Seguridad");
+            System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
 
             opcionTrabajador = scanner.nextInt();
@@ -71,6 +73,10 @@ public class Main {
                     System.exit(0);
                     break;
                 case 4:
+                    mantenimientoSeguridad();
+                    System.exit(0);
+                    break;
+                case 5:
                     System.out.println("Saliendo del menú de trabajador.");
                     break;
                 default:
@@ -78,7 +84,7 @@ public class Main {
                     break;
             }
 
-        } while (opcionTrabajador != 4);
+        } while (opcionTrabajador != 5);
     }
 
     private static void menuVisitanteDelZoo() {
@@ -180,5 +186,58 @@ public class Main {
                 // Mostrar inventario
                 inventario.mostrarInventario();
             }
+
+        // Mantenimiento y Seguridad
+
+    private static void mantenimientoSeguridad() {
+        Mantenimiento mantenimiento = new Mantenimiento();
+        Seguridad sistemaSeguridad = new Seguridad();
+        int opcionMantenimientoSeguridad; // Declarar la variable fuera del bucle
+
+        do {
+            System.out.println("\nMenú Mantenimiento y Seguridad");
+            System.out.println("1. Programar Mantenimiento");
+            System.out.println("2. Reparación Urgente");
+            System.out.println("3. Monitorear Accesos");
+            System.out.println("4. Monitorear Movimientos");
+            System.out.println("5. Salir");
+            System.out.print("Seleccione una opción (1, 2, 3, 4 o 5): ");
+
+            opcionMantenimientoSeguridad = scanner.nextInt();
+
+            switch (opcionMantenimientoSeguridad) {
+                case 1:
+                    // Lógica para programar mantenimiento
+                    System.out.print("Tarea de mantenimiento a programar: ");
+                    String tareaMantenimiento = scanner.next();
+                    mantenimiento.programarMantenimiento(tareaMantenimiento);
+                    System.exit(0);
+                    break;
+                case 2:
+                    // Lógica para reparación urgente
+                    System.out.print("Tarea de reparación urgente: ");
+                    String tareaReparacionUrgente = scanner.next();
+                    mantenimiento.reparacionUrgente(tareaReparacionUrgente);
+                    System.exit(0);
+                    break;
+                case 3:
+                    // Lógica para monitorear accesos
+                    sistemaSeguridad.monitorearAccesos();
+                    System.exit(0);
+                    break;
+                case 4:
+                    // Lógica para monitorear movimientos
+                    sistemaSeguridad.monitorearMovimientos();
+                    System.exit(0);
+                    break;
+                case 5:
+                    System.out.println("Saliendo del menú de mantenimiento y seguridad.");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
+                    break;
+            }
+        } while (opcionMantenimientoSeguridad != 5);
+    }
         }
 
