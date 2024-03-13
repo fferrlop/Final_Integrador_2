@@ -1,6 +1,3 @@
-//Tres modulos, uno de animales, otro de visitantes y otro de habitats
-
-
 package org.example;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -18,8 +15,3 @@ public class Main {
         }
     }
 }
-
-// dentro de main un constructor que compile zoologico y ordenar las jaulas organizando una ruta
-// Zoo - habitat - animal - Necesita preguntar al visitante que tipo de animales quiere ver para la ruta
-// Hacen falta dos menus, uno para trabajadores y otro para visitantes, por tanto las vacunas y tal sera para trabajadores y los animales y rutas para los visitantes
-// Crear Package de trabajadores y visitantes
