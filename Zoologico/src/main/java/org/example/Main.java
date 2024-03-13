@@ -1,17 +1,40 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Bienvenido al Zoologico");
+
+        // Menú principal
+        System.out.println("1. Visitante");
+        System.out.println("2. Trabajador");
+        System.out.print("Seleccione su rol (1 o 2): ");
+
+        int opcion = scanner.nextInt();
+
+        switch (opcion) {
+            case 1:
+                // Interfaz para visitantes
+                System.out.println("Interfaz para visitantes");
+                // Lógica para visitantes
+                break;
+            case 2:
+                // Interfaz para trabajadores
+                System.out.println("Interfaz para trabajadores");
+                // Lógica para trabajadores
+                break;
+            default:
+                System.out.println("Opción no válida. Por favor, seleccione 1 o 2.");
+                break;
         }
+
+        // Cierre del scanner
+        scanner.close();
     }
 }
+
